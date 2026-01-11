@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./assets/book-open.svg" />
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-head">
+        <img class="nav-img" src="./assets/book-open.svg" alt="book-img" />
+        <a href="./index.html" class="nav-title">LearnHub</a>
+      </div>
+      <ul class="nav-sidebar">
+        <div class="sidebar">
+          <img src="./assets/home.svg" class="sidebar-img" />
+          <a class="sidebar-text" href="./index.html">Home</a>
+        </div>
+        <div class="sidebar">
+          <img src="./assets/bookmark.svg" class="sidebar-img" />
+          <a class="sidebar-text" id="savedPage" href="./saved.html"
+            >Saved Videos</a
+          >
+        </div>
+      </ul>
+    </nav>
+    <main>
+      <h2>Welcome Back, Havva!</h2>
+      <div class="search-bar">
+        <form id="search-form">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="What do you want to learn today?"
+          />
+          <button id="search-btn">
+            <img src="./assets/search.svg" />
+          </button>
+        </form>
+      </div>
+      <div id="content-container"></div>
+      <p id="error" class="hidden error"></p>
+      <button id="loadMore" class="hidden">Load More</button>
+    </main>
+    <script src="secret.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

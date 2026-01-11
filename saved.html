@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./assets/bookmark.svg" />
+    <title>Saved Videos</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-head">
+        <img class="nav-img" src="./assets/bookmark.svg" alt="book-img" />
+        <a href="./saved.html" class="nav-title">Saved Videos</a>
+      </div>
+      <div class="sidebar">
+        <img src="./assets/home.svg" class="sidebar-img" />
+        <a
+          id="backtoMainPage"
+          class="sidebar-text"
+          href="./index.html"
+          target="_blank"
+          >Home Page</a
+        >
+      </div>
+    </nav>
+    <main>
+      <h2>Here is your Saved Videos!</h2>
+      <div class="hidden" id="saved-container"></div>
+      <p id="error" class="hidden error"></p>
+    </main>
+    <script src="./saved.js"></script>
+    <script src="./secret.js"></script>
+  </body>
+</html>
