@@ -10,19 +10,34 @@
   <body>
     <nav class="navbar">
       <div class="nav-head">
-        <img class="nav-img" src="./assets/bookmark.svg" alt="book-img" />
-        <a href="./saved.html" class="nav-title">Saved Videos</a>
+        <img class="nav-img" src="./assets/book-open.svg" alt="book-icon" />
+        <a href="./index.html" class="nav-title">LearnHub</a>
       </div>
-      <div class="sidebar">
-        <img src="./assets/home.svg" class="sidebar-img" />
-        <a
-          id="backtoMainPage"
-          class="sidebar-text"
-          href="./index.html"
-          target="_blank"
-          >Home Page</a
-        >
-      </div>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <img src="./assets/hamburger.svg" alt="hamburger-icon" />
+      </button>
+
+      <ul class="nav-sidebar">
+        <li class="sidebar">
+          <img
+            class="sidebar-img"
+            src="./assets/bookmark.svg"
+            alt="book-icon"
+          />
+          <a href="./saved.html" class="sidebar-text">Saved Videos</a>
+        </li>
+        <li class="sidebar">
+          <img src="./assets/home.svg" class="sidebar-img" alt="home-icon" />
+          <a
+            id="backtoMainPage"
+            class="sidebar-text"
+            href="./index.html"
+            target="_blank"
+            >Home</a
+          >
+        </li>
+      </ul>
     </nav>
     <main>
       <h2>Here is your Saved Videos!</h2>

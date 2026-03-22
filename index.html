@@ -10,20 +10,29 @@
   <body>
     <nav class="navbar">
       <div class="nav-head">
-        <img class="nav-img" src="./assets/book-open.svg" alt="book-img" />
+        <img class="nav-img" src="./assets/book-open.svg" alt="book-icon" />
         <a href="./index.html" class="nav-title">LearnHub</a>
       </div>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <img src="./assets/hamburger.svg" alt="hamburger-icon" />
+      </button>
+
       <ul class="nav-sidebar">
-        <div class="sidebar">
-          <img src="./assets/home.svg" class="sidebar-img" />
+        <li class="sidebar">
+          <img src="./assets/home.svg" class="sidebar-img" alt="home-icon" />
           <a class="sidebar-text" href="./index.html">Home</a>
-        </div>
-        <div class="sidebar">
-          <img src="./assets/bookmark.svg" class="sidebar-img" />
+        </li>
+        <li class="sidebar">
+          <img
+            src="./assets/bookmark.svg"
+            class="sidebar-img"
+            alt="save-icon"
+          />
           <a class="sidebar-text" id="savedPage" href="./saved.html"
             >Saved Videos</a
           >
-        </div>
+        </li>
       </ul>
     </nav>
     <main>
@@ -36,7 +45,7 @@
             placeholder="What do you want to learn today?"
           />
           <button id="search-btn">
-            <img src="./assets/search.svg" />
+            <img src="./assets/search.svg" alt="search-icon" />
           </button>
         </form>
       </div>

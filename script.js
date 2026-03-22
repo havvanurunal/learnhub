@@ -8,11 +8,17 @@ const loadMore = document.getElementById('loadMore');
 const savedContainer = document.getElementById('saved-container');
 const saved = document.getElementById('savedPage');
 const searchTerm = inputField.value;
+const hamburger = document.querySelector('.hamburger');
+const navSidebar = document.querySelector('.nav-sidebar');
 
 let currentSearchTerm;
 let nextPageToken;
 
 let allLoadedVideos = [];
+
+hamburger.addEventListener('click', () => {
+  navSidebar.classList.toggle('open');
+});
 
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -37,7 +43,7 @@ loadMore.addEventListener('click', async () => {
 
 saved.addEventListener('click', (event) => {
   event.preventDefault();
-  window.open('saved.html', target = '_blank')
+  window.open('saved.html')
 })
 
 
@@ -115,6 +121,7 @@ function displayVideos(videos) {
     width="639"
     height="400"
     src="https://www.youtube.com/embed/${video.id.videoId}"
+    title = "${video.snippet.title}"
     frameborder="0"
     allowfullscreen>
     </iframe>
@@ -146,6 +153,7 @@ function appendVideos(videos) {
     width="639"
     height="400"
     src="https://www.youtube.com/embed/${video.id.videoId}"
+    title = "${video.snippet.title}"
     frameborder="0"
     allowfullscreen>
     </iframe>
@@ -161,8 +169,6 @@ function appendVideos(videos) {
     contentContainer.appendChild(card);
   })
 }
-
-
 
 function constructFetchUrl(url, authenticate = true, queryParams) {
   let fetchUrl = url;

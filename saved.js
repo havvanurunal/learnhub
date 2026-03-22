@@ -1,6 +1,12 @@
 const savedContainer = document.getElementById('saved-container');
+const hamburger = document.querySelector('.hamburger');
+const navSidebar = document.querySelector('.nav-sidebar');
 
 let savedVideos = JSON.parse(localStorage.getItem('savedVideos'));
+
+hamburger.addEventListener('click', () => {
+  navSidebar.classList.toggle('open');
+});
 
 
 function renderSavedVideos() {
@@ -21,6 +27,7 @@ function renderSavedVideos() {
       width="639"
       height="400"
       src="https://www.youtube.com/embed/${video.id}"
+      title = "${video.title}"
       frameborder="0"
       allowfullscreen>
       </iframe>
