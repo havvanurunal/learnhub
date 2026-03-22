@@ -33,13 +33,13 @@ cd learnhub
 
 ### 3. Add your API key
 
-Create a file called `secret.js` in the root of the project with the following content:
+ A `secret.js` file is already included in the repository with the following structure:
 
 ```javascript
 const YOUTUBE_ACCESS_KEY = 'YOUR_API_KEY_HERE';
 ```
 
-> `secret.js` is listed in `.gitignore` and will not be pushed to GitHub. You must create this file manually after cloning.
+Replace `'YOUR_API_KEY_HERE'` with your actual YouTube API key.
 
 ### 4. Run the project
 
