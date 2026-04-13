@@ -9,10 +9,13 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-head">
-        <img class="nav-img" src="./assets/book-open.svg" alt="book-icon" />
-        <a href="./index.html" class="nav-title">LearnHub</a>
-      </div>
+      <a href="./index.html" class="nav-title">
+        <img
+          class="nav-img"
+          src="./assets/book-open.svg"
+          alt="book-icon"
+        />LearnHub</a
+      >
 
       <button class="hamburger" aria-label="Toggle menu">
         <img src="./assets/hamburger.svg" alt="hamburger-icon" />
@@ -20,17 +23,21 @@
 
       <ul class="nav-sidebar">
         <li class="sidebar">
-          <img src="./assets/home.svg" class="sidebar-img" alt="home-icon" />
-          <a class="sidebar-text" href="./index.html">Home</a>
+          <a class="sidebar-link" href="./index.html"
+            ><img
+              src="./assets/home.svg"
+              class="sidebar-img"
+              alt="home-icon"
+            />Home</a
+          >
         </li>
         <li class="sidebar">
-          <img
-            src="./assets/bookmark.svg"
-            class="sidebar-img"
-            alt="save-icon"
-          />
-          <a class="sidebar-text" id="savedPage" href="./saved.html"
-            >Saved Videos</a
+          <a class="sidebar-link" id="savedPage" href="./saved.html">
+            <img
+              src="./assets/bookmark.svg"
+              class="sidebar-img"
+              alt="save-icon"
+            />Saved Videos</a
           >
         </li>
       </ul>
@@ -39,13 +46,16 @@
       <h2>Welcome Back, Havva!</h2>
       <div class="search-bar">
         <form id="search-form">
+          <label for="user-input" class="visually-hidden"
+            >Search for videos</label
+          >
           <input
             type="text"
             id="user-input"
             placeholder="What do you want to learn today?"
           />
-          <button id="search-btn">
-            <img src="./assets/search.svg" alt="search-icon" />
+          <button id="search-btn" aria-label="Search videos">
+            <img src="./assets/search.svg" alt="" />
           </button>
         </form>
       </div>

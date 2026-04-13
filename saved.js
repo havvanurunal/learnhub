@@ -2,41 +2,44 @@ const savedContainer = document.getElementById('saved-container');
 const hamburger = document.querySelector('.hamburger');
 const navSidebar = document.querySelector('.nav-sidebar');
 
-let savedVideos = JSON.parse(localStorage.getItem('savedVideos'));
-
 hamburger.addEventListener('click', () => {
   navSidebar.classList.toggle('open');
 });
 
 
 function renderSavedVideos() {
-  savedContainer.innerHTML = '';
+  savedContainer.textContent = '';
   let videosToDisplay = JSON.parse(localStorage.getItem('savedVideos')) || [];
 
   if (videosToDisplay.length === 0) {
-    savedContainer.innerHTML = '<p>No saved videos yet!</p>';
+    const emptyMessage = document.createElement('p');
+    emptyMessage.textContent = 'No saved videos yet!'
+    savedContainer.appendChild(emptyMessage);
     return;
   }
 
   videosToDisplay.forEach(video => {
-    const card = document.createElement('div'); // create a div to hold the card
+    const card = document.createElement('div');
     card.classList.add('video-card');
-    card.innerHTML = `
-      <h3>${video.title}</h3>
-      <iframe
-      width="639"
-      height="400"
-      src="https://www.youtube.com/embed/${video.id}"
-      title = "${video.title}"
-      frameborder="0"
-      allowfullscreen>
-      </iframe>
-      `;
+
+    const title = document.createElement('h3');
+    title.textContent = video.title;
+
+    const iframe = document.createElement('iframe');
+    iframe.width = '639';
+    iframe.height = '400';
+    iframe.src = `https://www.youtube.com/embed/${video.id}`;
+    iframe.title = video.title;
+    iframe.allowFullscreen = true;
+
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-button');
     removeBtn.textContent = 'Remove 🗑️';
     removeBtn.dataset.videoId = video.id;
     removeBtn.dataset.title = video.title;
+
+    card.appendChild(title);
+    card.appendChild(iframe);
     card.appendChild(removeBtn);
     savedContainer.appendChild(card);
   })

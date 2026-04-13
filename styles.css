@@ -20,6 +20,7 @@
 
   /* Backgrounds */
   --color-bg-main: oklch(95% 0.05 320); /* Very light pink */
+  --color-bg-secondary: rgba(0, 0, 0, 0.05);
   --color-bg-gradient-start: oklch(92% 0.08 310); /* Light purple */
   --color-bg-gradient-end: oklch(95% 0.06 30); /* Light peachy pink */
 
@@ -55,31 +56,28 @@ body {
   background-color: var(--color-bg-main);
 }
 
-.nav-head {
+.nav-title {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 5px;
-  margin-left: 10px;
-
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 8px 12px;
+  margin-bottom: 26px;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.5px;
 }
-.nav-head:hover {
-  transform: scale(1.12);
+
+.nav-title:hover {
+  transform: scale(1.02);
 }
 
 .nav-img {
-  width: 40px;
+  width: 36px;
   background-size: cover;
   background-position: center;
-  background-position: no-repeat;
-}
-
-.nav-title {
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .nav-sidebar {
@@ -95,17 +93,16 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: justify;
   gap: 8px;
   padding: 8px 12px;
-  border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  position: relative;
+  border-radius: 8px;
 }
 
 .sidebar:hover {
-  transform: scale(1.25);
+  transform: scale(1.02);
+  background-color: var(--color-bg-secondary);
 }
 
 .sidebar-img {
@@ -115,11 +112,28 @@ body {
   flex-shrink: 0;
 }
 
-.sidebar-text {
+.sidebar-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   color: var(--color-primary-dark);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   white-space: nowrap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 main {
@@ -180,7 +194,7 @@ main > h2 {
 }
 
 #search-btn:hover {
-  transform: scale(1.12);
+  transform: scale(1.03);
 }
 
 #search-btn > img {
@@ -326,13 +340,23 @@ main > h2 {
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
     flex-direction: row;
+    text-align: center;
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
     min-height: unset;
     padding: 15px 20px;
     z-index: 100;
+  }
+
+  .nav-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0;
   }
 
   .nav-sidebar {
@@ -378,11 +402,12 @@ main > h2 {
     border: none;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    color: var(--color-primary-dark);
+    padding: 0px;
+    color: var(--color-button-primary-dark);
   }
 
   .hamburger img {
+    display: block;
     width: 28px;
     height: 28px;
   }
